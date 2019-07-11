@@ -9,6 +9,9 @@ import { RutaInicioComponent } from './rutas/ruta-inicio/ruta-inicio.component';
 import { RutaSitiosComponent } from './rutas/ruta-inicio/ruta-sitios/ruta-sitios.component';
 import { RutaHabitacionComponent } from './rutas/ruta-inicio/ruta-sitios/ruta-habitacion/ruta-habitacion.component';
 import { RutaLogHabitacionComponent } from './rutas/ruta-inicio/ruta-sitios/ruta-habitacion/ruta-log-habitacion/ruta-log-habitacion.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { RutaLogHabitacionComponent } from './rutas/ruta-inicio/ruta-sitios/ruta
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]
