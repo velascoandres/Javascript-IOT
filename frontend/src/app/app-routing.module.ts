@@ -29,7 +29,7 @@ const routes: Routes = [
     component: RutaHabitacionComponent
   },
   {
-    path:'sitio/habitacion/:idHabitacion/logHabitacion',
+    path:'sitio/habitacion/:idHabitacion/log',
     component: RutaLogHabitacionComponent
   },
 ];
