@@ -17,6 +17,10 @@ module.exports = {
     area:{
       type: 'number', required: true
     },
+    habitaciones:{
+      collection:'habitacion',
+      via:'fkSitio'
+    }
   },
 
 };

@@ -17,6 +17,17 @@ module.exports = {
     area:{
       type: 'number', required: true
     },
+    fkSitio:{
+      model:'sitio'
+    },
+    hijos:{
+      collection:'componente',
+      via:'fkHabitacion',
+    },
+    logs:{
+      collection: 'log',
+      via:'fkHabitacion'
+    }
   },
 
 };
