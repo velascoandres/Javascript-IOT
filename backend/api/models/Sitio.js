@@ -20,6 +20,10 @@ module.exports = {
     habitaciones:{
       collection:'habitacion',
       via:'fkSitio'
+    },
+    usuarios:{
+      collection:'usuario',
+      via:'sitios'
     }
   },
 

@@ -27,6 +27,10 @@ module.exports = {
     logs:{
       collection: 'log',
       via:'fkHabitacion'
+    },
+    usuarios:{
+      collection:'usuario',
+      via:'habitaciones'
     }
   },
 

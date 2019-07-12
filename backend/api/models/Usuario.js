@@ -23,9 +23,17 @@ module.exports = {
     estado:{
       type: 'boolean', required: false
     },
-    customToJSON: function() {
-      // Return a shallow copy of this record with the password and ssn removed.
-      return _.omit(this, ['clave', 'ssn'])
+    roles:{
+      collection:'rol',
+      via:'usuarios'
+    },
+    sitios:{
+      collection:'sitio',
+      via:'usuarios'
+    },
+    habitaciones:{
+      collection:'habitacion',
+      via:'usuarios'
     }
   },
 
