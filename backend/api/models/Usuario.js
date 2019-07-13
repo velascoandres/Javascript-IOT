@@ -28,12 +28,12 @@ module.exports = {
       via:'usuarios'
     },
     sitios:{
-      collection:'sitio',
-      via:'usuarios'
+      collection:'UsuarioSitio',
+      via:'fkUsuario'
     },
     habitaciones:{
-      collection:'habitacion',
-      via:'usuarios'
+      collection:'UsuarioHabitacion',
+      via:'fkUsuario'
     }
   },
 

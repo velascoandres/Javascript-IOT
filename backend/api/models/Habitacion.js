@@ -29,8 +29,8 @@ module.exports = {
       via:'fkHabitacion'
     },
     usuarios:{
-      collection:'usuario',
-      via:'habitaciones'
+      collection:'UsuarioHabitacion',
+      via:'fkHabitacion'
     }
   },
 

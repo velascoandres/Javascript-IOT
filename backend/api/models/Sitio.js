@@ -22,8 +22,8 @@ module.exports = {
       via:'fkSitio'
     },
     usuarios:{
-      collection:'usuario',
-      via:'sitios'
+      collection:'UsuarioSitio',
+      via:'fkSitio'
     }
   },
 
