@@ -17,6 +17,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MatInputModule } from '@angular/material';
+import {UsuarioHttpService} from "./servicios/http/http-usuario.service";
 
 
 @NgModule({
@@ -43,7 +44,9 @@ import { MatInputModule } from '@angular/material';
     ReactiveFormsModule,
     MatInputModule
   ],
-  providers: [],
+  providers: [
+    UsuarioHttpService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
