@@ -22,6 +22,8 @@ import {AuthHttpService} from "./servicios/http/http-auth.service";
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {SitioHttpService} from "./servicios/http/http-sitio.service";
 import {HabitacionHttpService} from "./servicios/http/htt-habitacion.service";
+import {UsuarioSitioHttpService} from "./servicios/http/http-usuario-sitio.service";
+import {MatExpansionModule} from '@angular/material/expansion';
 
 
 @NgModule({
@@ -48,13 +50,15 @@ import {HabitacionHttpService} from "./servicios/http/htt-habitacion.service";
     FormsModule,
     ReactiveFormsModule,
     MatInputModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatExpansionModule
   ],
   providers: [
     UsuarioHttpService,
     AuthHttpService,
     SitioHttpService,
-    HabitacionHttpService
+    HabitacionHttpService,
+    UsuarioSitioHttpService
   ],
   bootstrap: [AppComponent]
 })
