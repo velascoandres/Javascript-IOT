@@ -18,9 +18,9 @@ module.exports.policies = {
   ***************************************************************************/
 
   // '*': true,
-  UserController: {
+  /*UserController: {
     update: 'isAuth',
     destroy: 'isAuth',
     //token: 'isAuth'
-  }
+  }*/
 };

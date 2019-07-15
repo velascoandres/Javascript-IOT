@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, Validators} from '@angular/forms';
+import {Usuario} from "../../dto/usuario";
 
 @Component({
   selector: 'app-ruta-login',
@@ -10,6 +11,7 @@ export class RutaLoginComponent implements OnInit {
 
   controlEmail = new FormControl('', [Validators.required, Validators.email]);
   esconderPassword:boolean = true;
+  usuario:Usuario={};
 
   constructor() { }
 

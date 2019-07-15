@@ -18,6 +18,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MatInputModule } from '@angular/material';
 import {UsuarioHttpService} from "./servicios/http/http-usuario.service";
+import {HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import {UsuarioHttpService} from "./servicios/http/http-usuario.service";
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MatButtonModule,
     MatCheckboxModule,
     MatToolbarModule,
