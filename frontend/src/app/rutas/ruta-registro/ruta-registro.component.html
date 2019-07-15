@@ -1,3 +1,39 @@
-<p>
-  ruta-registro works!
-</p>
+<div class="d-flex justify-content-center">
+  <div class="p-2 formulario">
+    <div class="d-flex justify-content-center">
+      <div class="p-2">
+        <h2 class="text-center">Registrate</h2>
+      </div>
+    </div>
+    <form
+      #formularioRegistro="ngForm"
+      (submit)="registrar(formularioRegistro)"
+      novalidate
+    >
+      <mat-form-field class="full-width">
+        <input matInput name="correo" id="correo"  type="text" [(ngModel)]="usuario.correo" placeholder="Correo electronico" [formControl]="controlEmail" required >
+        <mat-error *ngIf="controlEmail.invalid">{{obtenerMensajeErrorCorreo()}}</mat-error>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput name="nombre" id="nombre"  placeholder="Nombre" type="text" required [(ngModel)]="usuario.nombre">
+        <mat-error *ngIf="!usuario.nombre">Escriba su nombre por favor</mat-error>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput name="apellido" id="apellido"  placeholder="Apellido" type="text" required [(ngModel)]="usuario.apellido">
+        <mat-error *ngIf="!usuario.apellido">Escriba su apellido por favor</mat-error>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput name="clave" id="clave"  placeholder="Ingresa tu contraseña" [type]="esconderPassword ? 'password' : 'text'" [(ngModel)]="usuario.clave" required="">
+        <mat-error *ngIf="!usuario.clave">Tiene que poner una contraseña</mat-error>
+        <button mat-icon-button matSuffix  type="button" (click)="esconderPassword = !esconderPassword" >
+          <mat-icon>{{esconderPassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+      <div class="d-flex justify-content-center">
+        <div class="p-2">
+          <button mat-raised-button color="warn" type="submit">Registrar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

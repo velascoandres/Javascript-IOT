@@ -24,7 +24,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/bootstrap/css/bootstrap-grid.css",
+              "src/assets/bootstrap/css/bootstrap.css"
+
             ],
             "scripts": []
           },
