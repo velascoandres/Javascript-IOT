@@ -6,7 +6,13 @@ import {environment} from "../../../environments/environment";
 
 @Injectable()
 export class UsuarioHttpService extends HttpPrincipal<Usuario>{
+  estaLogeado = false;
+
   constructor(private readonly _httpClient:HttpClient){
     super(_httpClient, environment.url, '/Usuario');
+  }
+
+  login(){
+
   }
 }
