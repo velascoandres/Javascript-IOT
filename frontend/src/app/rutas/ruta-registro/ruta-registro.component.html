@@ -23,7 +23,7 @@
         <mat-error *ngIf="!usuario.apellido">Escriba su apellido por favor</mat-error>
       </mat-form-field>
       <mat-form-field class="full-width">
-        <input matInput name="clave" id="clave"  placeholder="Ingresa tu contraseña" [type]="esconderPassword ? 'password' : 'text'" [(ngModel)]="usuario.clave" required="">
+        <input matInput name="clave" id="clave"  placeholder="Ingresa tu contraseña" [type]="esconderPassword ? 'password' : 'text'" [(ngModel)]="usuario.clave" required>
         <mat-error *ngIf="!usuario.clave">Tiene que poner una contraseña</mat-error>
         <button mat-icon-button matSuffix  type="button" (click)="esconderPassword = !esconderPassword" >
           <mat-icon>{{esconderPassword ? 'visibility_off' : 'visibility'}}</mat-icon>

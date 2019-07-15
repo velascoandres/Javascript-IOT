@@ -19,6 +19,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MatInputModule } from '@angular/material';
 import {UsuarioHttpService} from "./servicios/http/http-usuario.service";
 import {HttpClientModule} from "@angular/common/http";
+import {AuthHttpService} from "./servicios/http/http-auth.service";
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import {HttpClientModule} from "@angular/common/http";
     MatInputModule
   ],
   providers: [
-    UsuarioHttpService
+    UsuarioHttpService,
+    AuthHttpService
   ],
   bootstrap: [AppComponent]
 })

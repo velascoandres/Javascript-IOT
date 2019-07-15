@@ -10,17 +10,27 @@
         />
       </div>
     </div>
-    <form>
+    <form
+      #formularioLogin = "ngForm"
+      (submit)="ingresar(formularioLogin)"
+      novalidate
+    >
       <mat-form-field class="full-width">
-        <input matInput placeholder="Ingresa tu correo electronico" [formControl]="controlEmail" required>
+        <input matInput name="correo" placeholder="Ingresa tu correo electronico" [formControl]="controlEmail" required [(ngModel)]="auth.correo">
         <mat-error *ngIf="controlEmail.invalid">{{obtenerMensajeErrorCorreo()}}</mat-error>
       </mat-form-field>
       <mat-form-field class="full-width">
-        <input matInput placeholder="Ingresa tu contraseña" [type]="esconderPassword ? 'password' : 'text'">
-        <button mat-icon-button matSuffix (click)="esconderPassword = !esconderPassword" >
+        <input matInput name="clave" placeholder="Ingresa tu contraseña" [type]="esconderPassword ? 'password' : 'text'" [(ngModel)]="auth.clave" required>
+        <mat-error *ngIf="!auth.clave">Tiene que poner su contraseña</mat-error>
+        <button mat-icon-button matSuffix type="button" (click)="esconderPassword = !esconderPassword" >
           <mat-icon>{{esconderPassword ? 'visibility_off' : 'visibility'}}</mat-icon>
         </button>
       </mat-form-field>
+      <div class="d-flex justify-content-center">
+        <div class="p-2">
+          <button mat-raised-button color="warn" type="submit">Ingresar</button>
+        </div>
+      </div>
     </form>
   </div>
 </div>
