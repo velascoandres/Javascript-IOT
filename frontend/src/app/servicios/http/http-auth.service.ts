@@ -27,7 +27,6 @@ export class AuthHttpService {
               this.estaLogeado = false;
               return false;
             }else {
-              console.log(datos.usuario);
               this.estaLogeado = true;
               this.usuario = datos.usuario;
               const url = ['/inicio'];

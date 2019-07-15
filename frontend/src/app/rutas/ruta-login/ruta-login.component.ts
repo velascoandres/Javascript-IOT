@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, Validators} from '@angular/forms';
-import {Auth, Usuario} from "../../dto/usuario";
-import {UsuarioHttpService} from "../../servicios/http/http-usuario.service";
+import {Auth} from "../../dto/usuario";
 import {AuthHttpService} from "../../servicios/http/http-auth.service";
+import {MatSnackBar} from "@angular/material";
 
 @Component({
   selector: 'app-ruta-login',
@@ -17,6 +17,7 @@ export class RutaLoginComponent implements OnInit {
 
   constructor(
     private readonly _authService:AuthHttpService,
+    private _snackBar: MatSnackBar
   ) { }
 
   ngOnInit() {
@@ -26,6 +27,11 @@ export class RutaLoginComponent implements OnInit {
       this.controlEmail.hasError('email') ? 'correo invalido' : '';
   }
 
+  protected mostrarMensaje(mensaje:string){
+    this._snackBar.open(mensaje, "Cerrar", {
+      duration: 3000,
+    });
+  }
   ingresar(formulario){
     if(formulario.invalid){
       return
@@ -34,8 +40,13 @@ export class RutaLoginComponent implements OnInit {
     this._authService.login(
       this.auth
     ).subscribe(
-      (datos)=>console.log(datos),
-      (error)=>console.log(error),
+      (datos)=>{
+        console.log(datos);
+      },
+      (error)=>{
+        console.log(error.error.mensaje);
+        this.mostrarMensaje(error.error.mensaje);
+      }
     )
     //Llamar al servicio
   }

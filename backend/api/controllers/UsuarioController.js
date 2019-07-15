@@ -22,8 +22,9 @@ module.exports = {
       (error,usuario)=>{
         // Si no encontro
         if(error){
-          return res.serverError({mensaje:'Usuario no encontrado', error:404});
+          return res.serverError({mensaje:'Error del servidor', error:500});
         }
+        if (!usuario) return res.serverError({mensaje:'No existe un usuario con ese correo', error:404});
 
         /*
         // Comparar claves con hash
