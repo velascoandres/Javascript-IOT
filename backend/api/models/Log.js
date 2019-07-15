@@ -11,9 +11,6 @@ module.exports = {
     descripcion:{
       type: 'string', required: true
     },
-    fkHabitacion:{
-      model:'habitacion'
-    },
     fkComponente:{
       model:'componente'
     }

@@ -20,6 +20,8 @@ import {UsuarioHttpService} from "./servicios/http/http-usuario.service";
 import {HttpClientModule} from "@angular/common/http";
 import {AuthHttpService} from "./servicios/http/http-auth.service";
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {SitioHttpService} from "./servicios/http/http-sitio.service";
+import {HabitacionHttpService} from "./servicios/http/htt-habitacion.service";
 
 
 @NgModule({
@@ -50,7 +52,9 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
   ],
   providers: [
     UsuarioHttpService,
-    AuthHttpService
+    AuthHttpService,
+    SitioHttpService,
+    HabitacionHttpService
   ],
   bootstrap: [AppComponent]
 })
