@@ -20,13 +20,9 @@ module.exports = {
     fkSitio:{
       model:'sitio'
     },
-    hijos:{
+    componentes:{
       collection:'componente',
       via:'fkHabitacion',
-    },
-    logs:{
-      collection: 'log',
-      via:'fkHabitacion'
     },
     usuarios:{
       collection:'UsuarioHabitacion',

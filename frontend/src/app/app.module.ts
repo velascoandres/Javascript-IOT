@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RutaLoginComponent } from './rutas/ruta-login/ruta-login.component';
@@ -19,6 +18,12 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MatInputModule } from '@angular/material';
 import {UsuarioHttpService} from "./servicios/http/http-usuario.service";
 import {HttpClientModule} from "@angular/common/http";
+import {AuthHttpService} from "./servicios/http/http-auth.service";
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {SitioHttpService} from "./servicios/http/http-sitio.service";
+import {HabitacionHttpService} from "./servicios/http/htt-habitacion.service";
+import {UsuarioSitioHttpService} from "./servicios/http/http-usuario-sitio.service";
+import {MatExpansionModule} from '@angular/material/expansion';
 
 
 @NgModule({
@@ -29,7 +34,7 @@ import {HttpClientModule} from "@angular/common/http";
     RutaInicioComponent,
     RutaSitiosComponent,
     RutaHabitacionComponent,
-    RutaLogHabitacionComponent
+    RutaLogHabitacionComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,10 +49,16 @@ import {HttpClientModule} from "@angular/common/http";
     MatFormFieldModule,
     FormsModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    MatSnackBarModule,
+    MatExpansionModule
   ],
   providers: [
-    UsuarioHttpService
+    UsuarioHttpService,
+    AuthHttpService,
+    SitioHttpService,
+    HabitacionHttpService,
+    UsuarioSitioHttpService
   ],
   bootstrap: [AppComponent]
 })

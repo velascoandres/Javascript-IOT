@@ -1,5 +1,5 @@
 /**
- * Rol.js
+ * UsuarioRol.js
  *
  * @description :: A model definition represents a database table/collection.
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
@@ -8,13 +8,11 @@
 module.exports = {
 
   attributes: {
-      nombre:{
-        type:'string',
-        required:true
+      fkUsuario:{
+        model:'usuario'
       },
-      usuarios:{
-        collection:'usuarioRol',
-        via:'fkRol'
+      fkRol:{
+        model:'rol',
       }
   },
 

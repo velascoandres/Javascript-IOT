@@ -15,7 +15,7 @@ module.exports = {
       type: 'string', required: true
     },
     correo:{
-      type: 'string', required: true
+      type: 'string', required: true, unique: true
     },
     clave:{
       type: 'string', required: true
@@ -24,8 +24,8 @@ module.exports = {
       type: 'boolean', required: false
     },
     roles:{
-      collection:'rol',
-      via:'usuarios'
+      collection:'usuarioRol',
+      via:'fkUsuario'
     },
     sitios:{
       collection:'UsuarioSitio',
@@ -39,7 +39,33 @@ module.exports = {
 
   customToJSON: function() {
     // Return a shallow copy of this record with the password and ssn removed.
+    // @ts-ignore
     return _.omit(this, ['clave', 'ssn'])
+  },
+  validationMessages: { //hand for i18n & l10n
+    names: {
+      required: 'Name is required'
+    },
+    email: {
+      email: 'Provide valid email address',
+      required: 'Email is required',
+      unique: 'This email is already existing'
+    },
+    password: {
+      required: 'Password is required'
+    }
+  },
+  // Para el hash la contraseña
+  /*
+  beforeCreate: function (values, cb) {
+
+    // Hash password
+    bcrypt.hash(values.password, 10, function (err, hash) {
+      if (err) return cb(err);
+      values.clave = hash;
+      cb();
+    });
   }
+  */
 };
 
