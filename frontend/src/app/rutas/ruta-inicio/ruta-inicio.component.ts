@@ -46,4 +46,15 @@ export class RutaInicioComponent implements OnInit {
         },
       )
   }
+
+  verPermiso(sitio:Sitio):boolean{
+    if(!sitio.usuarios) return false;
+    const usuarioSitio = sitio.usuarios.filter(
+      (usuario)=>{
+          return usuario.fkSitio === sitio.id;
+      }
+    );
+
+    return usuarioSitio[0].esAdminSitio;
+  }
 }

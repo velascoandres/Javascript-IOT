@@ -24,8 +24,8 @@ module.exports = {
       type: 'boolean', required: false
     },
     roles:{
-      collection:'rol',
-      via:'usuarios'
+      collection:'usuarioRol',
+      via:'fkUsuario'
     },
     sitios:{
       collection:'UsuarioSitio',

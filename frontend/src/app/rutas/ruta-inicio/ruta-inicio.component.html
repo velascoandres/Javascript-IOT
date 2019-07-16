@@ -43,8 +43,11 @@
             <tr *ngFor="let sitio of sitios">
               <td>{{sitio.nombre}}</td>
               <td>{{sitio.direccion}}</td>
+              <!--
+              <td><span *ngIf="verPermiso(sitio)">Administrar</span><span *ngIf="!verPermiso(sitio)">Ver</span></td>
+              -->
               <td>
-                <button  mat-fab color="primary">Ir</button>
+                <button  mat-fab color="primary" [routerLink]="['/','sitio',sitio.id]">Ir</button>
               </td>
             </tr>
           </tbody>
