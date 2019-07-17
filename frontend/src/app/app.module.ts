@@ -24,6 +24,7 @@ import {SitioHttpService} from "./servicios/http/http-sitio.service";
 import {HabitacionHttpService} from "./servicios/http/htt-habitacion.service";
 import {UsuarioSitioHttpService} from "./servicios/http/http-usuario-sitio.service";
 import {MatExpansionModule} from '@angular/material/expansion';
+import { TablaUsuariosComponent } from './componentes/tabla-usuarios/tabla-usuarios.component';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
     RutaSitiosComponent,
     RutaHabitacionComponent,
     RutaLogHabitacionComponent,
+    TablaUsuariosComponent,
   ],
   imports: [
     BrowserModule,

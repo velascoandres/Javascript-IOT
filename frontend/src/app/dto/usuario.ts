@@ -1,6 +1,7 @@
 import {Sitio} from "./sitio";
 import {Habitacion} from "./habitacion";
 import {Rol} from "./rol";
+import {UsuarioSitio} from "./usuarioSitio";
 
 export  interface Usuario {
   id?:number,
@@ -11,9 +12,9 @@ export  interface Usuario {
   estado?:boolean,
   createdAt?: number,
   updatedAt?: number,
-  sitios?:Sitio[],
+  sitios?:UsuarioSitio[],
   roles?:Rol[],
-  habitaciones?:Habitacion[],
+  habitaciones?:any[],
 }
 
 export interface Auth {

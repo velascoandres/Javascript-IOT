@@ -31,14 +31,14 @@
       <thead>
       <tr>
         <th>Habitacion</th>
-        <th>Permisos</th>
+        <th>Capacidad</th>
         <th>Acciones</th>
       </tr>
       </thead>
       <tbody>
       <tr *ngFor="let habitacion of habitaciones">
         <td>{{habitacion.nombre}}</td>
-        <td>Administrar</td>
+        <td>{{habitacion.capacidad}}</td>
         <!--
         <td><span *ngIf="verPermiso(sitio)">Administrar</span><span *ngIf="!verPermiso(sitio)">Ver</span></td>
         -->
@@ -48,6 +48,9 @@
       </tr>
       </tbody>
     </table>
+  </div>
+  <div class="p-2 flex-fill">
+    <app-tabla-usuarios [idEntidad]="idSitio" [entidadTipo]="'sitio'"></app-tabla-usuarios>
   </div>
 </div>
 
