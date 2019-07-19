@@ -4,6 +4,7 @@ import {HabitacionHttpService} from "../../../servicios/http/htt-habitacion.serv
 import {ActivatedRoute} from "@angular/router";
 import {SitioHttpService} from "../../../servicios/http/http-sitio.service";
 import {Sitio} from "../../../dto/sitio";
+import {Usuario} from "../../../dto/usuario";
 
 @Component({
   selector: 'app-ruta-sitios',
@@ -16,6 +17,8 @@ export class RutaSitiosComponent implements OnInit {
   protected idSitio:number=0;
   nombreBusqueda:string='';
   sitio:Sitio={nombre:'',direccion:'',area:0};
+  usuarios:Usuario[]=[];
+
   constructor(
     private readonly _habitacionService:HabitacionHttpService,
     private readonly _sitioService:SitioHttpService,

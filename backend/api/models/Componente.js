@@ -20,6 +20,10 @@ module.exports = {
     logs:{
       collection:'log',
       via:'fkComponente'
+    },
+    estado : {
+      type : "boolean",
+      defaultsTo : false
     }
   },
 
