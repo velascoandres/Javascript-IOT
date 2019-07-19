@@ -3,7 +3,7 @@
       <mat-expansion-panel>
         <mat-expansion-panel-header>
           <mat-panel-title>
-            <h2>Usuarios</h2>
+            <h2>Agregar usuarios:</h2>
           </mat-panel-title>
         </mat-expansion-panel-header>
         <form
@@ -13,7 +13,7 @@
           (input)="buscarUsuario()"
         >
           <mat-form-field class="full-width">
-            <input matInput placeholder="Buscar usuario" name="nombreBusqueda" id="nombreBusqueda"
+            <input matInput placeholder="Buscar usuario por nombre" name="nombreBusqueda" id="nombreBusqueda"
                    [(ngModel)]="nombreBusqueda">
           </mat-form-field>
 
@@ -31,7 +31,7 @@
   <tbody>
   <tr *ngFor="let usuario of usuarios">
       <td>
-        <mat-checkbox (change)="asignar($event,usuario.id)" [checked]="verificarAsignacion(usuario)"></mat-checkbox>
+        <mat-checkbox (change)="gestionUsuario($event,usuario.id)" [checked]="verificarAsignacion(usuario)"></mat-checkbox>
       </td>
       <td>
         {{usuario.apellido}} {{usuario.nombre}}

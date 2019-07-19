@@ -5,7 +5,6 @@ import {ActivatedRoute} from "@angular/router";
 import {SitioHttpService} from "../../../servicios/http/http-sitio.service";
 import {Sitio} from "../../../dto/sitio";
 import {Usuario} from "../../../dto/usuario";
-import {UsuarioHttpService} from "../../../servicios/http/http-usuario.service";
 
 @Component({
   selector: 'app-ruta-sitios',

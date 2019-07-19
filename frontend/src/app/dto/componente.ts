@@ -5,5 +5,6 @@ export interface Componente {
   nombre:string,
   codigoSensorAsociado:string,
   fkHabitacion: number,
+  estado?:boolean,
   logs?:LogComponente[]
 }

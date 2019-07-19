@@ -25,6 +25,9 @@ import {HabitacionHttpService} from "./servicios/http/htt-habitacion.service";
 import {UsuarioSitioHttpService} from "./servicios/http/http-usuario-sitio.service";
 import {MatExpansionModule} from '@angular/material/expansion';
 import { TablaUsuariosComponent } from './componentes/tabla-usuarios/tabla-usuarios.component';
+import {UsuarioHabitacionHttpService} from "./servicios/http/http-usuario-habitacion.service";
+import {ComponenteHttpService} from "./servicios/http/htt-componente.service";
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 
 @NgModule({
@@ -53,14 +56,17 @@ import { TablaUsuariosComponent } from './componentes/tabla-usuarios/tabla-usuar
     ReactiveFormsModule,
     MatInputModule,
     MatSnackBarModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatSlideToggleModule
   ],
   providers: [
     UsuarioHttpService,
     AuthHttpService,
     SitioHttpService,
     HabitacionHttpService,
-    UsuarioSitioHttpService
+    UsuarioSitioHttpService,
+    UsuarioHabitacionHttpService,
+    ComponenteHttpService
   ],
   bootstrap: [AppComponent]
 })

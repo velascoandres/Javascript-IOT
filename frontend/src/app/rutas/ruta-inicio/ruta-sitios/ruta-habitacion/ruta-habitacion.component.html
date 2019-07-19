@@ -1,3 +1,60 @@
-<p>
-  ruta-habitacion works!
-</p>
+<div class="d-flex justify-content-lg-start">
+  <div class="p-2 formulario flex-fill">
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <h2>{{habitacion.nombre}}</h2>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <form
+          #formularioBusqueda="ngForm"
+          novalidate
+          (change)="buscarComponente()"
+          (input)="buscarComponente()"
+        >
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Buscar componente" name="nombreBusqueda" id="nombreBusqueda"
+                   [(ngModel)]="nombreBusqueda">
+          </mat-form-field>
+
+        </form>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+</div>
+
+
+<div class="d-flex">
+  <div class="p-2 flex-fill">
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Código GPIO</th>
+        <th>Acciones</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let componente of componentes">
+        <td>{{componente.nombre}}</td>
+        <td>{{componente.codigoSensorAsociado}}</td>
+        <!--
+        <td><span *ngIf="verPermiso(sitio)">Administrar</span><span *ngIf="!verPermiso(sitio)">Ver</span></td>
+        -->
+        <td>
+          <mat-slide-toggle [checked]="componente.estado" (change)="accionar($event)">
+            <span *ngIf="!componente.estado">Activar</span>
+            <span *ngIf="componente.estado">Apagar</span>
+          </mat-slide-toggle>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="p-2 flex-fill">
+    <app-tabla-usuarios [idEntidad]="idSitio" [entidadTipo]="'habitacion'"></app-tabla-usuarios>
+  </div>
+</div>
+
+
