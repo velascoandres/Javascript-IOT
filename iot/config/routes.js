@@ -20,10 +20,11 @@ module.exports.routes = {
   ***************************************************************************/
 
   '/': { view: 'pages/homepage' },
-  'post /login': {action: 'Usuario/login'},
-  'GET /accionarComponente/:id':{
-    action: 'componente/accionarComponente'
+  'POST /sensor/accionar':{
+    action:'sensor/accionar'
   }
+
+
   /***************************************************************************
   *                                                                          *
   * More custom routes here...                                               *
