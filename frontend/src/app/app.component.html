@@ -29,18 +29,24 @@
     <mat-toolbar-row>
       <span>TIMBERSAW</span>
       <span class="spacer"></span>
-      <button mat-button [routerLink]="['inicio']">
+      <button mat-button  *ngIf="estaLogeado()" [routerLink]="['inicio']">
         Sitios
       </button>
-      <button mat-button [routerLink]="['registro']">
+      <button mat-button  *ngIf="!estaLogeado()" [routerLink]="['registro']">
         Registro
       </button>
-      <button mat-button>
+      <button mat-button *ngIf="estaLogeado()" (click)="salir()">
         Salir
       </button>
-      <button mat-button [routerLink]="['login']">
+      <button mat-button *ngIf="!estaLogeado()" [routerLink]="['login']">
         Login
       </button>
+      <mat-icon aria-hidden="false" *ngIf="estaLogeado()">
+          person_pin
+      </mat-icon>
+      <span *ngIf="estaLogeado()">
+        {{obtenerNombreUsaurio()}}
+      </span>
     </mat-toolbar-row>
   </mat-toolbar>
 </div>

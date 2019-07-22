@@ -16,7 +16,7 @@ export class AuthHttpService {
               private readonly _router:Router)
   {}
 
-  login(auth:Auth):Observable<boolean>{
+  login(auth:Auth){
     const  url = `${this.url}/login`;
 
     return this._httpClient.post(url, auth).pipe(
@@ -25,13 +25,14 @@ export class AuthHttpService {
           if(datos){
             if(datos.error){
               this.estaLogeado = false;
-              return false;
+              this._router.navigate(['/login']);
+
             }else {
               this.estaLogeado = true;
               this.usuario = datos.usuario;
+              // Llamar al almacenamiento local
               const url = ['/inicio'];
               this._router.navigate(url);
-              return true;
             }
 
           }
@@ -39,6 +40,13 @@ export class AuthHttpService {
       )
     );
   }
+
+  logout(){
+    this.estaLogeado = false;
+    const url = ['/login'];
+    this._router.navigate(url);
+  }
+
 }
 
 interface Respuesta {

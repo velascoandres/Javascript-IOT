@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Habitacion} from "../../../../dto/habitacion";
-import {Sitio} from "../../../../dto/sitio";
 import {Usuario} from "../../../../dto/usuario";
 import {HabitacionHttpService} from "../../../../servicios/http/htt-habitacion.service";
-import {SitioHttpService} from "../../../../servicios/http/http-sitio.service";
 import {ActivatedRoute} from "@angular/router";
 import {Componente} from "../../../../dto/componente";
 import {ComponenteHttpService} from "../../../../servicios/http/htt-componente.service";
@@ -76,5 +74,8 @@ export class RutaHabitacionComponent implements OnInit {
 
   accionar(evento,componente:Component){
     console.log("Ejecutar accion sobre: ",componente);
+    // Llamar al servicio conrrespondiente
+    // Actualizar tabla
+    this.refrescarComponentes(this.idHabitacion);
   }
 }
