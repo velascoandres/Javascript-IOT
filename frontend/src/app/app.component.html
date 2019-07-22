@@ -28,6 +28,18 @@
   <mat-toolbar color="primary">
     <mat-toolbar-row>
       <span>TIMBERSAW</span>
+      <div *ngIf="estaLogeado()">
+        <button *ngIf="!estaAbierto" mat-button (click)="abrirMenu()">
+          <mat-icon>
+            menu
+          </mat-icon>
+        </button>
+        <button *ngIf="estaAbierto" mat-button (click)="cerrarMenu()">
+          <mat-icon>
+            panorama_wide_angle
+          </mat-icon>
+        </button>
+      </div>
       <span class="spacer"></span>
       <button mat-button  *ngIf="estaLogeado()" [routerLink]="['inicio']">
         Sitios
@@ -54,3 +66,5 @@
 <div class="container" style="margin-top: 75px">
   <router-outlet></router-outlet>
 </div>
+
+

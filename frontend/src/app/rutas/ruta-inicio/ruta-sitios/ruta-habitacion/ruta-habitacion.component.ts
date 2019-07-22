@@ -80,8 +80,10 @@ export class RutaHabitacionComponent implements OnInit {
         console.log(respuesta);
       },
       (error) => console.log(error),
+      ()=>{
+        // Actualizar tabla
+        this.refrescarComponentes(this.idHabitacion)
+      }
     );
-    // Actualizar tabla
-    this.refrescarComponentes(this.idHabitacion);
   }
 }

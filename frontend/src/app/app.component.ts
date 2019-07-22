@@ -1,5 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {AuthHttpService} from "./servicios/http/http-auth.service";
+import {MatSidenav} from "@angular/material";
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,18 @@ import {AuthHttpService} from "./servicios/http/http-auth.service";
 })
 export class AppComponent implements OnInit{
   title = 'frontend';
+  estaAbierto:boolean = false;
+
+
+
+
+  cerrarMenu() {
+    this.estaAbierto = false;
+  }
+
+  abrirMenu(){
+    this.estaAbierto = true;
+  }
 
   constructor(
     private readonly _authService:AuthHttpService,

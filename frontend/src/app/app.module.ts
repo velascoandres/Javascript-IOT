@@ -28,6 +28,8 @@ import { TablaUsuariosComponent } from './componentes/tabla-usuarios/tabla-usuar
 import {UsuarioHabitacionHttpService} from "./servicios/http/http-usuario-habitacion.service";
 import {ComponenteHttpService} from "./servicios/http/htt-componente.service";
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
 
 
 @NgModule({
@@ -57,7 +59,9 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     MatInputModule,
     MatSnackBarModule,
     MatExpansionModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatSidenavModule,
+    MatListModule
   ],
   providers: [
     UsuarioHttpService,
