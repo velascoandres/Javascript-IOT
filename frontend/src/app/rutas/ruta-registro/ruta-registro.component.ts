@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Form, FormControl, Validators} from "@angular/forms";
 import {Usuario} from "../../dto/usuario";
 import {UsuarioHttpService} from "../../servicios/http/http-usuario.service";
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-ruta-registro',
@@ -18,6 +19,7 @@ export class RutaRegistroComponent implements OnInit {
 
   constructor(
     private readonly _usuarioService:UsuarioHttpService,
+    private readonly _router:Router,
   ) { }
 
   ngOnInit() {
@@ -33,15 +35,17 @@ export class RutaRegistroComponent implements OnInit {
       return
     }
     console.log("Se va a registrar un usuario");
+    //Llamar al servicio
     this._usuarioService.crear(
       this.usuario
     ).subscribe(
       (nuevo)=>console.log(nuevo),
       (error)=>console.log(error),
       ()=>{
+        const url = ['/inicio']
         //Redirigir a inicio
+        this._router.navigate(url);
       }
     )
-    //Llamar al servicio
   }
 }

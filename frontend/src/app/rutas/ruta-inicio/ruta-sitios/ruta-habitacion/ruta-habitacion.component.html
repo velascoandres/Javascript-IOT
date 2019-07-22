@@ -43,7 +43,7 @@
         <td><span *ngIf="verPermiso(sitio)">Administrar</span><span *ngIf="!verPermiso(sitio)">Ver</span></td>
         -->
         <td>
-          <mat-slide-toggle [checked]="componente.estado" (change)="accionar($event)">
+          <mat-slide-toggle [checked]="componente.estado" (change)="accionar($event,componente)">
             <span *ngIf="!componente.estado">Activar</span>
             <span *ngIf="componente.estado">Apagar</span>
           </mat-slide-toggle>

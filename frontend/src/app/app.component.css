@@ -9,3 +9,15 @@
 .full-width {
   width: 100%;
 }
+
+.sombra-barra{
+  border-radius: 2px;
+  box-shadow: 0 5px 10px #999;
+}
+
+.contenedor-c{
+  background-color: white;
+}
+
+
+
