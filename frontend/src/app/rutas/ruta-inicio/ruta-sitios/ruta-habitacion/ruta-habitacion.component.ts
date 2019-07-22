@@ -72,9 +72,15 @@ export class RutaHabitacionComponent implements OnInit {
       )
   }
 
-  accionar(evento,componente:Component){
+  accionar(evento,componente:Componente){
     console.log("Ejecutar accion sobre: ",componente);
     // Llamar al servicio conrrespondiente
+    this._componenteService.accionar(componente.id).subscribe(
+      (respuesta)=>{
+        console.log(respuesta);
+      },
+      (error) => console.log(error),
+    );
     // Actualizar tabla
     this.refrescarComponentes(this.idHabitacion);
   }

@@ -21,7 +21,7 @@ module.exports.routes = {
 
   '/': { view: 'pages/homepage' },
   'post /login': {action: 'Usuario/login'},
-  'GET /accionarComponente/:id':{
+  'GET /Componente/accionarComponente/:id':{
     action: 'componente/accionarComponente'
   }
   /***************************************************************************
