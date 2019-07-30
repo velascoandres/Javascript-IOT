@@ -21,9 +21,14 @@ module.exports.routes = {
 
   '/': { view: 'pages/homepage' },
   'post /login': {action: 'Usuario/login'},
-  'GET /Componente/accionarComponente/:id':{
+  'GET /Componente/accionarComponente/:id/':{
     action: 'componente/accionarComponente'
-  }
+  },
+  'GET /Componente/apagarComponente/:id/':{
+    action: 'componente/apagarComponente'
+  },
+
+
   /***************************************************************************
   *                                                                          *
   * More custom routes here...                                               *

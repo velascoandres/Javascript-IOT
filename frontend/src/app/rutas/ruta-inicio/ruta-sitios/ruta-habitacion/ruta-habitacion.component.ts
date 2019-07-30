@@ -72,18 +72,47 @@ export class RutaHabitacionComponent implements OnInit {
       )
   }
 
-  accionar(evento,componente:Componente){
+  accionar(estado:boolean,evento,componente:Componente){
     console.log("Ejecutar accion sobre: ",componente);
     // Llamar al servicio conrrespondiente
-    this._componenteService.accionar(componente.id).subscribe(
-      (respuesta)=>{
-        console.log(respuesta);
-      },
-      (error) => console.log(error),
-      ()=>{
-        // Actualizar tabla
-        this.refrescarComponentes(this.idHabitacion)
-      }
-    );
+
+
+    console.log('el estado estaaaaaa: ',estado)
+
+
+    if(estado == true){
+      this._componenteService.apagar(componente.id).subscribe(
+        (respuesta)=>{
+          console.log(respuesta);
+        },
+        (error) => console.log(error),
+        ()=>{
+          // Actualizar tabla
+          this.refrescarComponentes(this.idHabitacion)
+        }
+      );
+
+    }else{
+      this._componenteService.accionar(componente.id).subscribe(
+        (respuesta)=>{
+          console.log(respuesta);
+        },
+        (error) => console.log(error),
+        ()=>{
+          // Actualizar tabla
+          this.refrescarComponentes(this.idHabitacion)
+        }
+      );
+    }
+
+
+
+
+
+
+
+
+
+
   }
 }

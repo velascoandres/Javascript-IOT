@@ -24,4 +24,19 @@ export class ComponenteHttpService extends HttpPrincipal<Componente>{
     );
   }
 
+
+  apagar(id:number):Observable<RespuestaSensor>{
+    const  url = `${this.url}${this.modelo}/apagarComponente/${id}`;
+    return this.httpclient.get(url).pipe(
+      map(
+        (datos)=>{
+          return datos as RespuestaSensor;
+        }
+      )
+    );
+  }
+
+
+
+
 }
