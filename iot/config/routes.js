@@ -22,6 +22,9 @@ module.exports.routes = {
   '/': { view: 'pages/homepage' },
   'POST /sensor/accionar':{
     action:'sensor/accionar'
+  },
+  'POST /sensor/apagar':{
+    action:'sensor/apagar'
   }
 
 
